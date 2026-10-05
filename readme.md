@@ -63,7 +63,7 @@
 
 ### Study
  - Network
- - Lunux
+ - Linux
  - Security
  - Tools
  - Weekly Study Log
