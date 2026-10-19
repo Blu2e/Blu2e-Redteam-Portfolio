@@ -1,4 +1,4 @@
-# 서비스 식별
+# 서비스 식별 및 서버 설정 확인
 
 ## 1. 실습 목적
  - 가상 환경에서 대상 서버의 네트워크 연결과 실행 중인 서비스 확인
@@ -15,21 +15,33 @@
 
 ## 3. 실행한 명령어
 
-### Kali Linux : 네트워크 및 서비스 확인
- - ping -c 4 10.10.10.4 : 대상 서버와 네트워크 통신이 가능한지 확인
- - nmap 10.10.10.4 : 대상 서버의 기본 TCP 포트 스캔
- - nmap -sV -p 22 10.10.10.4 : 22번 포트의 서비스 및 버전 정보 탐지
- - searchsploit openssh 9.6 : OpenSSH 9.6 관련 자료 검색
- - searchsploit openssh : OpenSSH 관련 자료를 넓은 범위에서 검색
- - ssh blue@10.10.10.4 : 대상 서버에 SSH로 접속하여 정상 접속 여부 확인
+### Kali Linux : 네트워크 연결 확인
+ - ping -c 4 10.10.10.4
+  - 대상 Ubuntu 서버와 네트워크 통신이 가능한지 확인
+  - 전송한 패킷과 응답 받은 패킷 수를 비교해 통신 상태 확인
+ 
+### Kali Linux : 열린 포트 확인
+ - nmap 10.10.10.4
+  - 대상 서버의 기본 TCP 포트 검사
+  - 열린 포트와 포트 상태 확인
 
-### Ubuntu : 패키지 및 서비스 확인
- - sudo ss -lntp : TCP 연결을 대기하는 포트와 관련 프로세스 확인
- - apt policy openssh-server : OpenSSH 서버 패키지의 설치 버전과 후보 버전 확인
- - sudo apt update : 패키지 저장소의 패키지 목록 갱신
- - apt list --upgradable openssh-server : OpenSSH 서버 패키지의 업데이트 가능 여부 확인
- - apt changelog openssh-server : OpenSSH 패키지의 변경 기록 및 보안 수정 내역 조사
- - sudo apt install --only-upgrade openssh-server : 설치된 OpenSSH 서버 패키지 업데이트
+### Kali Linux : SSH 서비스 식별
+ - nmap -sV -p 22 10.10.10.4
+  - -sV : 서비스 및 버전 정보 탐지 시도
+  - -p 22 : 22번 포트만 검사
+  - 탐지 결과를 바탕으로 SSH 서비스와 버전 정보 확인
+
+### Ubuntu Target : 실행 중인 서비스 확인
+ - sudo ss -lntp
+  - TCP 연결을 대기 중인 포트와 관련 프로세스를 확인
+  - SSH 서비스 프로세스인 sshd가 연결을 대기하고 있는지 확인
+
+### Ubuntu Target : SSH 보안 설정 확인
+ - sudo sshd -T | grep -E '^(permitrootlogin|passwordauthentication|pubkeyauthentication|permitemptypasswords|maxauthtries|x11forwarding|allowtcpforwarding) '
+  - sshd -T : SSH 서버의 유효 설정을 출력
+  - grep -E : 지정한 보안 설정 항목만 골라 출력
+  - root 로그인 정책, 인증 방식, 인증 시도 제한 등의 설정 확인
+  - 본 명령어는 설정을 변경하지 않고 조회만 수행
 
 ### Kali Linux : 업데이트 후 재검증
  - nmap -sV -p 22 10.10.10.4 : 업데이트 후 SSH 서비스 버전 정보 재확인
