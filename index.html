@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BLU2E의 사이버보안 학습 및 레드팀 프로젝트 포트폴리오">
+    <title>BLU2E | Red Team Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="app-shell">
+
+        <!-- 왼쪽 사이드바 -->
+        <aside class="sidebar">
+            <a href="#home" class="brand">
+                <span class="brand-mark">B2</span>
+                <span class="brand-name">BLU2E</span>
+                <span class="brand-caption">CYBERSECURITY PORTFOLIO</span>
+            </a>
+
+            <nav class="navigation" aria-label="메인 메뉴">
+                <a href="#about">About Me</a>
+                <a href="#project" class="active">Project</a>
+                <a href="#study">Study</a>
+                <a href="#retrospective">Retrospective</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span>GITHUB · VERSIONED WORK</span>
+                <p>SMALL STEPS<br>BRING BIG CHANGES.</p>
+            </div>
+        </aside>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main-content" id="home">
+
+            <header class="topbar">
+                <span>PORTFOLIO / <strong>PROJECT OVERVIEW</strong></span>
+                <span class="lab-status">HANDS-ON LAB</span>
+            </header>
+
+            <!-- 소개 영역 -->
+            <section class="hero" id="about">
+                <p class="eyebrow">BLU2E / RED TEAM LEARNING JOURNEY</p>
+
+                <h1>Learning security <span>by doing.</span></h1>
+
+                <p class="hero-description">
+                    실습을 통해 보안을 배우고,
+                    분석 근거와 문제 해결 과정을 기록합니다.
+                </p>
+            </section>
+
+            <!-- 대표 프로젝트 -->
+            <section class="featured-project" id="project">
+                <div class="project-information">
+                    <p class="section-label">FEATURED PROJECT 01</p>
+
+                    <h2>Virtual Lab Penetration Test</h2>
+                    <h3>Kali Linux × Ubuntu Server</h3>
+
+                    <p>
+                        가상 환경에서 대상 서버를 구성하고,
+                        네트워크 정찰부터 서비스 식별,
+                        패키지 분석 및 보안 개선 과정을 기록하는
+                        모의 침투 테스트 프로젝트입니다.
+                    </p>
+
+                    <div class="tags">
+                        <span>Nmap</span>
+                        <span>OpenSSH</span>
+                        <span>Linux</span>
+                        <span>Git</span>
+                    </div>
+
+                    <a class="text-link" href="#project-details">
+                        프로젝트 기록 살펴보기 →
+                    </a>
+                </div>
+
+                <div class="terminal" aria-label="실습 결과 예시">
+                    <div class="terminal-header">
+                        <span class="terminal-dots">● ● ●</span>
+                        <span>kali@kali:~</span>
+                    </div>
+
+                    <pre><code>$ nmap -sV -p 22 10.10.10.4
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6p1
+
+$ ssh blue@10.10.10.4
+
+blue@ubuntu-target:~$</code></pre>
+
+                    <p class="terminal-note">
+                        LAB TARGET · SERVICE IDENTIFICATION
+                    </p>
+                </div>
+            </section>
+
+            <!-- 프로젝트 단계 -->
+            <section class="project-grid" id="project-details">
+
+    <article class="info-card">
+        <span class="card-icon">01</span>
+        <p class="section-label">RECONNAISSANCE</p>
+        <h3>Network &amp; Service Discovery</h3>
+        <p>대상 서버의 네트워크 연결, 열린 포트와 서비스 정보를 확인합니다.</p>
+
+        <div class="card-actions">
+            <span class="status">RECORDED</span>
+            <a class="text-link"
+               href="https://github.com/Blu2e/Blu2e-Redteam-Portfolio/blob/main/Project/03-enumeration/README.md"
+               target="_blank" rel="noopener noreferrer">
+                실습 기록 보기 →
+            </a>
+        </div>
+    </article>
+
+    <article class="info-card">
+        <span class="card-icon">02</span>
+        <p class="section-label">ANALYSIS</p>
+        <h3>Package &amp; Configuration Review</h3>
+        <p>설치된 패키지 버전과 보안 설정, 관련 보안 수정 내역을 조사합니다.</p>
+
+        <div class="card-actions">
+            <span class="status status-progress">UNDER REVIEW</span>
+            <a class="text-link"
+               href="https://github.com/Blu2e/Blu2e-Redteam-Portfolio/blob/main/Project/04-vulnerability-analysis/README.md"
+               target="_blank" rel="noopener noreferrer">
+                분석 기록 보기 →
+            </a>
+        </div>
+    </article>
+
+    <article class="info-card">
+        <span class="card-icon">03</span>
+        <p class="section-label">RETEST</p>
+        <h3>Patch &amp; SSH Validation</h3>
+        <p>패키지 업데이트 후 서비스 버전, SSH 접속과 로그를 재확인합니다.</p>
+
+        <div class="card-actions">
+            <span class="status status-verified">CHECKED</span>
+            <a class="text-link"
+               href="https://github.com/Blu2e/Blu2e-Redteam-Portfolio/blob/main/Project/07-retest/README.md"
+               target="_blank" rel="noopener noreferrer">
+                재검증 기록 보기 →
+            </a>
+        </div>
+    </article>
+
+</section>
+
+            <!-- 학습 기록 -->
+            <section class="content-section" id="study">
+                <p class="section-label">LEARNING LOG</p>
+                <h2>Study</h2>
+                <p>
+                    Linux CLI, 네트워크, Python, Git 및
+                    보안 학습 내용을 정리합니다.
+                </p>
+            </section>
+
+            <!-- 회고 -->
+            <section class="content-section" id="retrospective">
+                <p class="section-label">REFLECTION & GROWTH</p>
+                <h2>Retrospective</h2>
+                <p>
+                    실습 중 발생한 문제와 해결 과정,
+                    배운 점을 기록합니다.
+                </p>
+            </section>
+
+            <footer class="site-footer">
+                BLU2E · RED TEAM PORTFOLIO · 2026
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>
