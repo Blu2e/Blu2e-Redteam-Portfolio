@@ -150,11 +150,28 @@ a:focus-visible {
     content: "↗";
 }
 
-.navigation a:hover,
+/* 선택된 메뉴에만 빨간색 강조 적용 */
 .navigation a.active {
     border-left-color: var(--red);
     background: linear-gradient(90deg, var(--red-soft), transparent);
     color: var(--red);
+}
+
+.navigation a.active::before {
+    color: var(--red);
+}
+
+/* 마우스를 사용하는 환경에서만 hover 효과 적용 */
+@media (hover: hover) and (pointer: fine) {
+    .navigation a:hover {
+        border-left-color: var(--red);
+        background: linear-gradient(90deg, var(--red-soft), transparent);
+        color: var(--red);
+    }
+
+    .navigation a:hover::before {
+        color: var(--red);
+    }
 }
 
 .navigation a.active::before,
@@ -589,8 +606,7 @@ a:focus-visible {
         display: none;
     }
 
-    .navigation a.active,
-    .navigation a:hover {
+    .navigation a.active,{
         border-color: rgba(255, 59, 79, 0.28);
     }
 
