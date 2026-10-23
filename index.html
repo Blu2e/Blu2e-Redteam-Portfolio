@@ -42,7 +42,7 @@
             </header>
 
             <!-- 소개 영역 -->
-            <section class="hero" id="about">
+            <section class="hero" id="hero">
                 <p class="eyebrow">BLU2E / RED TEAM LEARNING JOURNEY</p>
 
                 <h1>Learning security <span>by doing.</span></h1>
@@ -52,6 +52,43 @@
                     분석 근거와 문제 해결 과정을 기록합니다.
                 </p>
             </section>
+
+            <!-- About Me -->
+            <section class="content-section" id="about">
+                <p class="section-label">ABOUT ME</p>
+
+                <h2>안녕하세요. BLU2E입니다.</h2>
+
+                <p>
+                    안녕하세요. 빅데이터·정보보호학과에 재학 중인 장원재입니다.
+                    현재 정보보안 레드팀을 목표로 공부하고 있습니다.
+                </p>
+
+                <p>
+                    직장을 다니면서 학교의 지원을 받을 수 있는 기회가 생겼고,
+                    현재 자리에서 단순히 능력을 업그레이드하는 것보다
+                    제가 재미있어하는 것을 직접 배우고,
+                    나중에는 그것을 직업으로 가지고 있으면 재미있을 것 같다는 생각으로
+                    학교에 다니기 시작했습니다.
+                </p>
+
+                <p>
+                    학교에서 보안과 분석 관련된 여러 내용을 접하면서 점점 더 흥미를 느끼게 되었고,
+                    특히 문제를 하나씩 분석하고 해결해 나가는 과정이 게임처럼 느껴졌습니다.
+                </p>
+
+                <p>
+                    물론 실제 보안 업무는 게임처럼 단순한 공격과 방어의 느낌이 아닌
+                    엄숙한 분위기일 것이라고 생각합니다.
+                    하지만 하나씩 배우고 이해해 가는 과정이 재미있었고,
+                    그 과정에서 보안 분야에 대한 관심이 더 커졌습니다.
+                </p>
+
+                <p>
+                    그렇게 공부를 하면서 자연스럽게 레드팀 분야에 관심을 가지게 되었습니다.
+                </p>
+
+</section>
 
             <!-- 대표 프로젝트 -->
             <section class="featured-project" id="project">
@@ -89,7 +126,7 @@
                     <pre><code>$ nmap -sV -p 22 10.10.10.4
 
 PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 9.6p1
+22/tcp open  ssh     OpenSSH 9.6p1 Ubuntun 3ubuntu13.20
 
 $ ssh blue@10.10.10.4
 
@@ -154,24 +191,131 @@ blue@ubuntu-target:~$</code></pre>
 
 </section>
 
-            <!-- 학습 기록 -->
+            <!-- Study -->
             <section class="content-section" id="study">
                 <p class="section-label">LEARNING LOG</p>
                 <h2>Study</h2>
+
                 <p>
                     Linux CLI, 네트워크, Python, Git 및
                     보안 학습 내용을 정리합니다.
                 </p>
+
+                <div class="project-grid">
+
+                    <!-- Linux CLI -->
+                    <article class="info-card">
+                        <span class="card-icon">01</span>
+
+                        <p class="section-label">LINUX & SERVER</p>
+                        <h3>Linux CLI & SSH</h3>
+
+                        <p>
+                            Ubuntu 서버에서 SSH 서비스 상태와 보안 설정을 확인하고,
+                            패키지 버전 및 인증 로그를 조사했습니다.
+                        </p>
+
+                        <span class="status status-progress">
+                            LEARNING
+                        </span>
+                    </article>
+
+                    <!-- Network & Nmap-->
+                    <article class="info-card">
+                        <span class="card-icon">02</span>
+
+                        <p class="section-label">NETWORK & RECON</p>
+                        <h3>Network & Nmap</h3>
+
+                        <p>
+                            가상 네트워크의 통신 상태를 확인하고,
+                            Nmap을 이용해 열린 포트와 SSH 서비스 정보를 조사했습니다.
+                        </p>
+
+                        <span class="status status-progress">
+                            LEARNING
+                        </span>
+                    </article>
+
+                    <!-- Git & Github-->
+                     <article class="info-card">
+                        <span class="card-icon">03</span>
+
+                        <p class="section-label">VERSION CONTROL</p>
+                        <h3>Git & Github</h3>
+
+                        <p>
+                            변경 사항 확인, 스테이징, 커밋과 푸시를 익히고,
+                            실습 기록과 웹사이트 파일을 저장소에서 관리했습니다.
+                        </p>
+
+                        <span class="status status-progress">
+                            LEARNING
+                        </span>
+                    </article>
+
+                </div>
             </section>
 
-            <!-- 회고 -->
+            <!-- Retrospective -->
             <section class="content-section" id="retrospective">
-                <p class="section-label">REFLECTION & GROWTH</p>
+                <p class="section-label">REFLECTION &amp; GROWTH</p>
                 <h2>Retrospective</h2>
                 <p>
-                    실습 중 발생한 문제와 해결 과정,
-                    배운 점을 기록합니다.
+                    실습 중 발생한 문제와 해결 과정, 검증 과정에서 배운 점을 기록합니다.
                 </p>
+
+                <div class="project-grid">
+
+                    <!-- 기록 01 -->
+                    <article class="info-card">
+                        <span class="card-icon">01</span>
+
+                        <p class="section-label">TROUBLESHOOTING</p>
+                        <h3>Github 경로 오류 해결</h3>
+
+                        <p>
+                            프로젝트 문서 링크에서 404 오류가 발생했습니다.
+                            원인을 확인한 결과 실제 폴더 이름과 링크의 철자가
+                            일치하지 않았으며, 폴더 이름을 수정해 해결했습니다.
+                        </p>
+
+                        <span class="status status-verified">RESOLVED</span>
+                    </article>
+
+                    <!-- 기록 02 -->
+                    <article class="info-card">
+                        <span class="card-icon">02</span>
+
+                        <p class="section-label">PATCH MANAGEMENT</p>
+                        <h3>패키지 버전과 업데이트 확인</h3>
+
+                        <p>
+                            Installed와 Candidate의 차이를 확인하고,
+                            패키지 목록 갱신과 실제 업그레이드가 서로 다른 작업임을
+                            구분했습니다. 업데이트 후 설치 버전과 SSH 접속 상태를
+                            다시 확인했습니다.
+                        </p>
+
+                        <span class="status status-verified">VERIFIED</span>
+                    </article>
+
+                    <!-- 기록 03 -->
+                    <article class="info-card">
+                        <span class="card-icon">03</span>
+
+                        <p class="section-label">LOG ANALYSIS</p>
+                        <h3>SSH 접속 로그 분석</h3>
+
+                        <p>
+                            시간 범위를 제한한 로그 조회에서는 기록을 찾지 못했지만,
+                            조회 범위를 바꾸어 인증 성공 기록을 확인했습니다.
+                            로그의 조회 조건과 기록된 이벤트를 구분해 해석했습니다.
+                        </p>
+
+                        <span class="status status-verified">RECORDED</span>
+                    </article>
+                </div>
             </section>
 
             <footer class="site-footer">

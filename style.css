@@ -481,6 +481,10 @@ a:focus-visible {
 
 .content-section > p:last-child {
     margin-bottom: 0;
+}
+
+#study > p:last-child,
+#retrospective > p:last-child {
     color: var(--muted);
     font-size: 14px;
 }
@@ -658,4 +662,8 @@ a:focus-visible {
 
 .card-actions .text-link {
     margin-top: 0;
+}
+
+#about {
+    margin-bottom: 24px;
 }
