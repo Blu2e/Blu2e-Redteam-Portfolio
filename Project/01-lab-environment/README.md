@@ -3,7 +3,7 @@
 ## Goal
  가상 환경에서 모의 침투 테스트를 수행하기 위한 실습 환경을 구축합니다.
 
-## Planned Environment
+## 구축한 환경
  - VirtualBox
  - Kali Linux
  - Ubuntu
@@ -22,6 +22,8 @@
  - IPv4 네트워크 대역 : 10.10.10.0/24
  - DHCP 서버 : 사용
  - RedTeam-Lab IPv6 지원 : 비활성화
+ - 웹 실습 대상 : OWASP Juice Shop (Docker)
+ - 접속 주소 : http://10.10.10.4:3000
 
 ## Ubuntu-Target 구축 기록
 
